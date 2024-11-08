@@ -1,5 +1,5 @@
 package Enums;
 
-public enum Door {
+public enum DoorStatus {
     OPENED, CLOSED
 }

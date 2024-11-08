@@ -2,7 +2,7 @@ package Entity;
 
 import Button.InternalButton;
 import Enums.Direction;
-import Enums.Door;
+import Enums.DoorStatus;
 import Enums.Status;
 
 public class ElevatorCar {
@@ -12,9 +12,9 @@ public class ElevatorCar {
     private Direction direction;
     private Status status;
     private InternalButton button;
-    private Door door;
+    private DoorStatus door;
 
-    public ElevatorCar(int carId, Display display, Floor currentFloor, Direction direction, Status status, InternalButton button, Door door) {
+    public ElevatorCar(int carId, Display display, Floor currentFloor, Direction direction, Status status, InternalButton button, DoorStatus door) {
         this.carId = carId;
         this.display = display;
         this.currentFloor = currentFloor;
@@ -72,11 +72,11 @@ public class ElevatorCar {
         this.button = button;
     }
 
-    public Door getDoor() {
+    public DoorStatus getDoor() {
         return door;
     }
 
-    public void setDoor(Door door) {
+    public void setDoor(DoorStatus door) {
         this.door = door;
     }
 }
