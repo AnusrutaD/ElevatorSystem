@@ -1,5 +1,5 @@
 package Enums;
 
-public enum Status {
+public enum ElevatorStatus {
     STAND_BY, MOVING
 }

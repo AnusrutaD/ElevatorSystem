@@ -1,27 +1,5 @@
-# Elevator System
-
-## Requirements:
-- How many number of lifts? > n
-- How the lift will dispatch?
-
-
-## Objects
-- Building
-- Floor
-- ExternalButton
-- ElevatorCar
-- Display
-- InternalButton
-- Door
-
-## Enums
-- Direction
-- ElevatorStatus
-- DoorStatus
-
-
-```puml
 @startuml
+'https://plantuml.com/class-diagram
 
 class Building {
     - int noOfFloors;
@@ -130,4 +108,3 @@ class ElevatorController {
 ButtonDispatcher o-- ElevatorController
 
 @enduml
-```
