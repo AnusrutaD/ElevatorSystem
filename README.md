@@ -130,6 +130,7 @@ Button "1" *-- "1" ButtonDispatcher
 InternalButton "1" *-- "1" InternalButtonDispatcher
 ExternalButton "1" *-- "1" ExternalButtonDispatcher
 ButtonDispatcher "1" o-- "*" ElevatorController
+ElevatorController "1" o-- "1" ElevatorCar
 
 @enduml
 ```
@@ -244,4 +245,5 @@ Button "1" *-- "1" ButtonDispatcher
 InternalButton "1" *-- "1" InternalButtonDispatcher
 ExternalButton "1" *-- "1" ExternalButtonDispatcher
 ButtonDispatcher "1" o-- "*" ElevatorController
+ElevatorController "1" o-- "1" ElevatorCar
 ```
