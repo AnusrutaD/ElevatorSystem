@@ -14,8 +14,6 @@ class Floor {
     - ExternalButton button;
 }
 
-Building *-- Floor
-
 class ElevatorCar {
     - int carId;
     - Display display;
@@ -65,17 +63,6 @@ class InternalButton
 
 class ExternalButton
 
-Button <|-- InternalButton
-Button <|-- ExternalButton
-
-ElevatorCar *-- Display
-ElevatorCar o-- Floor
-ElevatorCar *-- Direction
-ElevatorCar *-- ElevatorStatus
-ElevatorCar o-- InternalButton
-ElevatorCar o-- Door
-Door o-- DoorStatus
-Floor o-- ExternalButton
 
 abstract class ButtonDispatcher {
     - List<ElevatorController> elevatorControllerList;
@@ -91,13 +78,6 @@ class ExternalButtonDispatcher {
     + void submitRequest(Floor floor, Direction direction);
 }
 
-ButtonDispatcher <|-- InternalButtonDispatcher
-ButtonDispatcher <|-- ExternalButtonDispatcher
-
-Button *-- ButtonDispatcher
-InternalButton *-- InternalButtonDispatcher
-ExternalButton *-- ExternalButtonDispatcher
-
 class ElevatorController {
     - int controllerId;
     - ElevatorCar car;
@@ -105,6 +85,25 @@ class ElevatorController {
     + void acceptNewRequest()
 }
 
-ButtonDispatcher o-- ElevatorController
+Building "1" *-- "*" Floor
+
+Button <|-- InternalButton
+Button <|-- ExternalButton
+
+ElevatorCar "1" *-- "1" Display
+ElevatorCar o-- Floor
+ElevatorCar *-- Direction
+ElevatorCar *-- ElevatorStatus
+ElevatorCar "1" o-- "1" InternalButton
+ElevatorCar "1" o-- "1" Door
+Door o-- DoorStatus
+Floor "1" o-- "1" ExternalButton
+ButtonDispatcher <|-- InternalButtonDispatcher
+ButtonDispatcher <|-- ExternalButtonDispatcher
+
+Button "1" *-- "1" ButtonDispatcher
+InternalButton "1" *-- "1" InternalButtonDispatcher
+ExternalButton "1" *-- "1" ExternalButtonDispatcher
+ButtonDispatcher "1" o-- "*" ElevatorController
 
 @enduml
